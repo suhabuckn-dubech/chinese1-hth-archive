@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 华体会</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce8d4 0%, #fbd5b5 50%, #f8c7a4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1.2rem;
+            line-height: 1.6;
+            color: #3a2e26;
+        }
+
+        .page-wrapper {
+            max-width: 820px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 248, 240, 0.9);
+            backdrop-filter: blur(2px);
+            border-radius: 36px;
+            padding: 2.4rem 2rem 2.8rem;
+            box-shadow: 0 16px 40px rgba(120, 70, 40, 0.15), 0 4px 12px rgba(160, 100, 60, 0.08);
+            transition: box-shadow 0.25s;
+            border: 1px solid rgba(255, 235, 215, 0.5);
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #4f3527;
+            margin-bottom: 0.2rem;
+            line-height: 1.2;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: #7a5e4b;
+            margin-bottom: 2rem;
+            border-left: 3px solid #dbaa83;
+            padding-left: 1rem;
+            font-weight: 400;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            background: rgba(245, 227, 210, 0.3);
+            padding: 1rem 1.2rem;
+            border-radius: 24px;
+            color: #3f2f23;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9b7b64;
+            border-bottom: 2px solid #dbaa83;
+            padding-bottom: 0.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            margin: 1.6rem 0 2rem;
+        }
+
+        .info-card {
+            background: #fffbf6;
+            border-radius: 28px;
+            padding: 1.2rem 1.3rem;
+            box-shadow: 0 2px 12px rgba(150, 90, 50, 0.08);
+            transition: transform 0.15s;
+            border: 1px solid #efdbc9;
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4f3527;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            color: #4d3a2c;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.8rem;
+            margin: 0.8rem 0 0.2rem;
+        }
+
+        .badge {
+            background: #efdccb;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #3f2b1d;
+            letter-spacing: 0.02em;
+            font-weight: 400;
+        }
+
+        .link-paragraph {
+            background: #f7ede4;
+            padding: 1.2rem 1.4rem;
+            border-radius: 30px;
+            margin: 1.8rem 0 1.2rem;
+            font-size: 1.02rem;
+            border: 1px solid #e6cdb7;
+        }
+
+        .link-paragraph a {
+            color: #6d4c36;
+            text-decoration: none;
+            font-weight: 500;
+            background: #ffffffd9;
+            padding: 0.1rem 0.7rem;
+            border-radius: 40px;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 4px rgba(100, 60, 30, 0.1);
+            border: 1px solid #dbb99d;
+            display: inline-block;
+            line-height: 1.5;
+        }
+
+        .link-paragraph a:hover {
+            background: #fff5ea;
+            box-shadow: 0 2px 10px rgba(140, 80, 40, 0.15);
+            border-color: #c69e7c;
+        }
+
+        .tip-box {
+            background: #e9d8c9;
+            border-radius: 30px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.4rem 0 1.8rem;
+            color: #31241b;
+            border-left: 6px solid #c49571;
+            font-size: 0.95rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .tip-box strong {
+            font-weight: 500;
+            color: #4a3223;
+        }
+
+        .faq-mini {
+            background: #fffbf6;
+            border-radius: 30px;
+            padding: 1.2rem 1.4rem;
+            margin-top: 1.2rem;
+            border: 1px solid #e3cfbb;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #4f3527;
+            font-size: 0.95rem;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #5b4536;
+            margin-top: 0.15rem;
+            padding-left: 1rem;
+            border-left: 2px solid #dbb99d;
+        }
+
+        .footnote {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #7f6553;
+            border-top: 1px dashed #dbb99d;
+            padding-top: 1.5rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .link-paragraph {
+                padding: 1rem 1rem;
+            }
+
+            .tip-box {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding: 0.8rem;
+            }
+
+            .card {
+                padding: 1.2rem 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="card">
+            <!-- hero -->
+            <div class="hero-title">华体会 · 简明浏览指南</div>
+            <div class="hero-sub">一份安静的信息卡片 · 不赶路，只感受</div>
+
+            <div class="intro-text">
+                这是一个关于 <strong>华体会</strong> 的简单页面。不谈夸张的承诺，只整理了一些用途、场景和提醒。如果你正好在探索或者只是路过，希望这几张卡片能带来一点清晰。
+            </div>
+
+            <!-- 用途卡片 + 适合人群 (双列) -->
+            <div class="section-label">✦ 信息卡片</div>
+            <div class="card-grid">
+                <div class="info-card">
+                    <h3>📌 用途卡片</h3>
+                    <p>日常浏览、信息查阅、轻量互动 —— 华体会在这些场景里更像一个安静的站点，没有干扰性的弹窗和冗余步骤。界面风格偏沉稳，适合需要专注阅读的人。</p>
+                    <div class="badge-list">
+                        <span class="badge">信息查阅</span>
+                        <span class="badge">内容浏览</span>
+                        <span class="badge">轻交互</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>👥 适合人群</h3>
+                    <p>喜欢简洁叙事的人、对界面克制有好感的使用者、以及倾向于先了解再判断的访问者。不太适合追求强烈视觉刺激或即时反馈的人群。</p>
+                    <div class="badge-list">
+                        <span class="badge">安静浏览者</span>
+                        <span class="badge">信息偏好型</span>
+                        <span class="badge">低干扰需求</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 自然链接段落 (嵌入 a 标签, 文本严格 "华体会") -->
+            <div class="link-paragraph">
+                🧭 如果你打算去看看，可以直接前往 <a href="https://chinese1-hth.com">华体会</a>。页面结构不复杂，主要功能区域都保持在视线范围内，没有太多需要“寻找”的负担。建议使用前大致了解自己的需求，会更有方向。
+            </div>
+
+            <!-- 提示 / 访问提醒 -->
+            <div class="tip-box">
+                <strong>⏳ 访问提醒</strong>
+                <span>—— 保持平常心浏览，不轻易透露个人信息，注意核对页面地址。如果遇到加载缓慢，可以稍后再试。</span>
+                <span style="opacity:0.7; margin-left: auto; font-size:0.85rem;"># 慢即是快</span>
+            </div>
+
+            <!-- FAQ 摘要 (2-3 个) -->
+            <div class="section-label" style="margin-top: 0.6rem;">✦ 常见摘要</div>
+            <div class="faq-mini">
+                <div class="faq-item">
+                    <div class="faq-q">❓ 华体会适合用来做什么？</div>
+                    <div class="faq-a">适合日常浏览、阅读内容、获取信息，界面没有过多装饰，功能指向比较直接。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">❓ 页面有什么特别需要注意的？</div>
+                    <div class="faq-a">注意保护个人隐私，不要在不确定的页面输入敏感数据。此外，不同网络环境下加载速度可能略有差异。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">❓ 页面风格和内容偏向？</div>
+                    <div class="faq-a">整体偏向沉静、文字化，适合喜欢阅读和自主探索的使用者。没有弹窗和强制跳转。</div>
+                </div>
+            </div>
+
+            <!-- 一句话收尾 -->
+            <div class="footnote">
+                一份简简单单的卡片页 · 不追不赶
+            </div>
+        </div>
+    </div>
+</body>
+</html>
